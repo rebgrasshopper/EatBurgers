@@ -1,0 +1,24 @@
+{
+  "name": "eatburgers",
+  "version": "1.0.0",
+  "description": "week 13 homework to make an interactive burger logger",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebgrasshopper/EatBurgers.git"
+  },
+  "author": "Plover Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebgrasshopper/EatBurgers/issues"
+  },
+  "homepage": "https://github.com/rebgrasshopper/EatBurgers#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
