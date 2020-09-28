@@ -1,10 +1,11 @@
+const { response } = require("express");
 //dependencies
 const connection = require("./connection");
 
 const orm = {
-    findAll: function(whereColumn, whereValue) {
+    findAll: function() {
         return new Promise(function(resolve, reject){
-            const query = `SELECT * FROM burgers WHERE ${whereColumn} LIKE ${wherevalue};`;
+            const query = "SELECT * FROM burgers;";
             connection.query(query, function(err, data) {
                 if (err) reject(err);
                 resolve(data);
@@ -14,7 +15,7 @@ const orm = {
 
     create: function(burger) {
         return new Promise(function(resolve, reject){
-            const query = `INSERT INTO burgers SET ?;`;
+            const query = 'INSERT INTO burgers SET ?;';
             connection.query(query, burger, function(err, data){
                 if (err) reject(err);
                 resolve(data);
@@ -22,9 +23,22 @@ const orm = {
         });
     },
 
-    delete: function(id) {
+
+    update: function(id, eaten) {
+        return new Promise(function(resolve, reject) {
+            const query = "UPDATE burgers SET eaten = ? WHERE id = ?";
+            console.log(id);
+            console.log(eaten);
+            connection.query(query, [eaten, id], function(err, data) {
+                if (err) reject(err);
+                resolve(data);
+            });
+        });
+    },
+
+    destroy: function(id) {
         return new Promise(function(resolve, reject){
-            const query = `DELETE FROM burgers WHERE id = ${id};`;
+            const query = 'DELETE FROM burgers WHERE id = ' + id;
             connection.query(query, function(err, data){
                 if(err) reject(err);
                 resolve(data);

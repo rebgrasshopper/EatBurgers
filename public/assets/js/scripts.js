@@ -3,18 +3,24 @@ $(function() {
     //eat button behavior
     $(".change-eaten").on("click", function(event) {
         const id = $(this).data("id");
-        const newEat = $(this).data("newEat");
+        let newEat = $(this).data("neweat");
+        if (newEat === true) {
+            newEat = 1;
+        } else {
+            newEat = 0;
+        }
         const newEatState = {
             eaten: newEat,
         };
+        console.log(newEatState);
 
         //send PUT
-        $.ajax(`/api/burgers/${id}`, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newEatState,
         }).then(function(){
             console.log(`Changed eaten to: ${newEat}`);
-            location.reload();
+            setTimeout(location.reload(), 200);
         });
     });
 
@@ -27,7 +33,7 @@ $(function() {
         };
 
         //send POST
-        $.ajax(`api/cats`, {
+        $.ajax("api/burgers", {
             type: "POST",
             data: newBurger,
         }).then(function() {
@@ -41,7 +47,7 @@ $(function() {
         const id = $(this).data("id");
 
         //Send DELETE
-        $.ajax(`/api/burgers/${id}`, {
+        $.ajax("/api/burgers/" +id, {
             type: "DELETE",
         }).then(function() {
             console.log(`Deleted burger id: ${id}`);
