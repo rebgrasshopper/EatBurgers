@@ -31,15 +31,19 @@ $(function() {
         const newBurger = {
             name: $("#bu").val().trim(),
         };
-
-        //send POST
-        $.ajax("api/burgers", {
-            type: "POST",
-            data: newBurger,
-        }).then(function() {
-            console.log(`Created new burger: ${newBurger.name}`);
-            location.reload();
-        });
+        //don't make new burger unless it has a name
+        if (!(newBurger.name == "")) {
+            console.log("NEW BURGER: ");
+            console.log(newBurger);
+            //send POST
+            $.ajax("api/burgers", {
+                type: "POST",
+                data: newBurger,
+            }).then(function() {
+                console.log(`Created new burger: ${newBurger.name}`);
+                location.reload();
+            });
+        }
     });
 
     //delete burger button behavior
