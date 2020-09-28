@@ -11,6 +11,26 @@ const orm = {
             });
         });
     },
+
+    create: function(burger) {
+        return new Promise(function(resolve, reject){
+            const query = `INSERT INTO burgers SET ?;`;
+            connection.query(query, burger, function(err, data){
+                if (err) reject(err);
+                resolve(data);
+            });
+        });
+    },
+
+    delete: function(id) {
+        return new Promise(function(resolve, reject){
+            const query = `DELETE FROM burgers WHERE id = ${id};`;
+            connection.query(query, function(err, data){
+                if(err) reject(err);
+                resolve(data);
+            });
+        });
+    },
 }
 
 module.exports = orm;
