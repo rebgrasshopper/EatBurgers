@@ -1,0 +1,33 @@
+body {
+    /* Photo by Frank Cone from Pexels */
+    background-image: url("../images/pexels-frank-cone-3279307.jpg");
+    background-size: cover;
+    color: whitesmoke;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#cat-image {
+    width: 200px;
+}
+
+h1{
+    font-size: 80px;
+    text-shadow:  0 0 30px #a32fe6, 0 0 5px #0000FF;
+}
+
+h2 {
+    font-size: 40px;
+    text-shadow:  0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.burger-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.uneaten-column {
+}
+
+.eaten-column {
+}
