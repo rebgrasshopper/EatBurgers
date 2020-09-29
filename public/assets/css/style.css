@@ -1,3 +1,4 @@
+/* WHOLE PAGE */
 body {
     /* Photo by Frank Cone from Pexels */
     background-image: url("../images/pexels-frank-cone-3279307.jpg");
@@ -7,8 +8,41 @@ body {
     margin: 0 auto;
 }
 
-#cat-image {
-    width: 200px;
+button {
+    border-radius: 8px;
+    border: none;
+    padding: 6px;
+    background-color: rgb(122, 6, 113);
+    color: whitesmoke;
+}
+
+
+
+
+/* CREATE GROUP */
+.create-group {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(6, 134, 134, .5);
+    margin: 20px;
+    border-radius: 15px;
+    height: 300px;
+}
+
+/* RIGHT SIDE */
+.text-divs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-form {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1{
@@ -16,18 +50,70 @@ h1{
     text-shadow:  0 0 30px #a32fe6, 0 0 5px #0000FF;
 }
 
-h2 {
-    font-size: 40px;
-    text-shadow:  0 0 3px #FF0000, 0 0 5px #0000FF;
+.create-form label {
+    margin-right: 8px;
+    font-size: larger;
 }
 
+.create-form input {
+    margin-right: 8px;
+    height: 30px;
+}
+
+/* LEFT SIDE */
+.cat-box {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cat-image {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+/* BURGER LISTS */
 .burger-box {
     display: flex;
     justify-content: space-around;
 }
 
+h2 {
+    font-size: 40px;
+    text-shadow:  0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
 .uneaten-column {
+    background-color: rgba(255, 194, 61, 0.5);
+    border-radius: 15px;
+    width: 48%;
+    padding: 20px;
+    margin: 10px;
 }
 
 .eaten-column {
+    background-color: rgba(86, 47, 177, 0.5);
+    border-radius: 15px;
+    width: 48%;
+    padding: 20px;
+    margin: 10px;
+}
+
+li {
+    padding: 3px;
+    font-size: 25px;
+    list-style: none;
+    margin-right: 30px;
+    margin-bottom: 4px;
+}
+
+li p {
+    margin-bottom: 4px;
+}
+
+li p:nth-of-type(2) {
+    margin-top: 0px;
 }
