@@ -19,29 +19,30 @@
     </div>
 </div>
 
+<figure id="burgercat"><img src="/assets/images/cateats.png" alt="cartoon cat eating a burger"></figure>
 
 <div class="burger-box">
     <div class="uneaten-column">
-        <h2>Uneaten Burgers:</h2>
+        <h2>Orders Ready:</h2>
 
-        <ul>
+        <ol>
             {{#each burgers}}
                 {{#unless eaten}}
                     {{> burger-block eaten=true}}
                 {{/unless}}
             {{/each}}
-        </ul>
+        </ol>
     </div>
 
     <div class="eaten-column">
-        <h2>Eaten Burgers:</h2>
+        <h2>Memories of Burgers Past:</h2>
 
-        <ul>
+        <ol>
             {{#each burgers}}
                 {{#if eaten}}
                     {{> burger-block eaten=false}}
                 {{/if}}
             {{/each}}
-        </ul>
+        </ol>
     </div>
 </div>

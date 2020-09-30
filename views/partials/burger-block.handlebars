@@ -1,9 +1,15 @@
 <li>
-    <p>{{id}}. {{name}}</p>
-    <p>
-    <button class="change-eaten" data-id="{{id}}" data-neweat="{{eaten}}">
-        {{#if eaten}}EAT!{{else}}MORE!{{/if}}
-        </button>
-    <button class="deleter" data-id="{{id}}">DELETE!</button>
-    </p>
+    {{!-- {{log "Begin partial"}}
+    {{log this}} --}}
+    <div>
+        <p>{{name}}</p>
+        <p>
+        <button class="change-eaten" data-id="{{id}}" data-neweat="{{eaten}}">
+            {{#if eaten}}FEED IT TO A CAT!{{else}}MAKE ANOTHER!{{/if}}
+            </button>
+        </p>
+        <p>
+        <button class="deleter" data-id="{{id}}">{{#if eaten}}Throw it in the trash.{{else}}Forget this. It was yucky.{{/if}}</button>
+        </p>
+    </div>
 </li>

@@ -6,6 +6,7 @@ body {
     color: whitesmoke;
     text-align: center;
     margin: 0 auto;
+    position: relative;
 }
 
 button {
@@ -88,32 +89,65 @@ h2 {
 
 .uneaten-column {
     background-color: rgba(255, 194, 61, 0.5);
-    border-radius: 15px;
-    width: 48%;
-    padding: 20px;
-    margin: 10px;
 }
 
 .eaten-column {
     background-color: rgba(86, 47, 177, 0.5);
+}
+
+.eaten-column, .uneaten-column {
     border-radius: 15px;
     width: 48%;
     padding: 20px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 li {
     padding: 3px;
     font-size: 25px;
-    list-style: none;
     margin-right: 30px;
     margin-bottom: 4px;
+    width: max-content;
+    z-index: 1000;
+}
+
+li div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: inherit;
 }
 
 li p {
     margin-bottom: 4px;
+    z-index: inherit;
 }
 
-li p:nth-of-type(2) {
+li p:nth-of-type(2), li p:nth-of-type(3) {
     margin-top: 0px;
+}
+
+
+#burgercat {
+    position: absolute;
+    width: min-content;
+    height: min-content;
+    top: 600px;
+    left: -100px;
+    z-index: 1;
+}
+
+#burgercat img {
+    height: 350px;
+
+}
+
+/* JQUERY EFFECTS */
+
+@media screen and (max-width: 800px) {
+
 }

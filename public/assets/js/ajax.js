@@ -1,7 +1,9 @@
+$("#burgercat").hide();
 //wait until DOM is loaded
 $(function() {
     //eat button behavior
     $(".change-eaten").on("click", function(event) {
+        effects();
         const id = $(this).data("id");
         let newEat = $(this).data("neweat");
         if (newEat === true) {
@@ -59,3 +61,23 @@ $(function() {
         });
     });
 });
+
+
+
+
+
+function effects() {
+    // run the currently selected effect
+    function runEffect() {
+      // Run the effect
+      $( "#burgercat" ).show( "fade", 500, callback );
+    };
+ 
+    //callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#burgercat:visible" ).removeAttr( "style" ).fadeOut();
+      }, 1000 );
+    };
+    $( "#burgercat" ).hide();
+  }
