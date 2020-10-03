@@ -1,3 +1,4 @@
+//function to serve as event listener reaction for YUM! and MORE! buttons
 function updateBehavior(event){
      // effects();
      const id = $(event.target).data("id");
@@ -39,12 +40,13 @@ function updateBehavior(event){
 }
 
 
+
+//Function to serve as event listener reaction for Yuck. and Gross. buttons
 function deleteBehavior(event){
     console.log($(event.target));
     const id = $(event.target).data("id");
     $(event.target).parents()[2].remove();
     console.log(id);
-
 
     //Send DELETE
     $.ajax("/api/burgers/" +id, {
@@ -53,9 +55,13 @@ function deleteBehavior(event){
         console.log(`Deleted burger id: ${id}`);
     });
 }
-//wait until DOM is loaded
-$(function() {
 
+
+
+
+
+//wait until DOM is loaded, main page behaviors
+$(function() {
 
     //new burger button behavior
     $(".create-form").on("submit", function(event) {
@@ -79,6 +85,7 @@ $(function() {
         }
     });
 
+    //YUM!/MORE! and Yuck./Gross. buttons
     document.addEventListener('click',function(event){
         console.log(event.target.className);
       if(event.target.className == 'change-eaten'){

@@ -1,3 +1,5 @@
+//functions to use with speech bubble animation
+
 const images = [$("#speechbubbleleft1"), $("#speechbubbleleft2"), $("#speechbubbleleft3"), $("#speechbubbleright1"), $("#speechbubbleright2"), $("#speechbubbleright3"), $("#speechbubbleright4")];
 
 //create li from name, id, eaten status of a burger
