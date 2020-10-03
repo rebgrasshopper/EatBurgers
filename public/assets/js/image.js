@@ -12,20 +12,18 @@ function makeLi(name, id, eaten){
         let html = `<div>
             <p><strong>${name}</strong></p>
             <p>
-            <button class="change-eaten" data-id="${id}" data-neweat="${eaten}">`;
-        if (eaten){
-            html += "MAKE ANOTHER!";
+            <button class="change-eaten" data-name="${name}" data-id="${id}" data-neweat="${eaten}">`;
+        if (!(eaten)){
+            html += "MORE!";
         } else {
-            html += "FEED IT TO A CAT!";
+            html += "YUM!";
         }
         html += `</button>
-            </p>
-            <p>
             <button class="deleter" data-id="${id}" onClick=updateBehavior()>`
-        if (eaten){
-            html += "Forget this. It was yucky."
+        if (!(eaten)){
+            html += "Gross."
         } else {
-            html += "Throw it in the trash."
+            html += "Yuck."
         }
         html += `</button>
             </p>

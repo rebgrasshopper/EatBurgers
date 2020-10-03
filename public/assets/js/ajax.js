@@ -37,6 +37,22 @@ function updateBehavior(event){
          });
      });
 }
+
+
+function deleteBehavior(event){
+    console.log($(event.target));
+    const id = $(event.target).data("id");
+    $(event.target).parents()[2].remove();
+    console.log(id);
+
+
+    //Send DELETE
+    $.ajax("/api/burgers/" +id, {
+        type: "DELETE",
+    }).then(function() {
+        console.log(`Deleted burger id: ${id}`);
+    });
+}
 //wait until DOM is loaded
 $(function() {
 
@@ -63,46 +79,14 @@ $(function() {
         }
     });
 
-    //delete burger button behavior
-    $(".deleter").on("click", function(event) {
-        const id = $(this).data("id");
-        $(this).parents()[2].remove();
-
-
-        //Send DELETE
-        $.ajax("/api/burgers/" +id, {
-            type: "DELETE",
-        }).then(function() {
-            console.log(`Deleted burger id: ${id}`);
-        });
-    });
+    document.addEventListener('click',function(event){
+        console.log(event.target.className);
+      if(event.target.className == 'change-eaten'){
+            updateBehavior(event);
+       } else if (event.target.className == 'deleter'){
+           deleteBehavior(event);
+       }
+   });
 });
 
 
-
-
-
-function effects() {
-    // run the currently selected effect
-    function runEffect() {
-      // Run the effect
-      $( "#burgercat" ).show( "fade", 500, callback );
-    };
- 
-    //callback function to bring a hidden box back
-    function callback() {
-      setTimeout(function() {
-        $( "#burgercat:visible" ).removeAttr( "style" ).fadeOut();
-      }, 1000 );
-    };
-    $( "#burgercat" ).hide();
-  }
-
-
-
-  document.addEventListener('click',function(event){
-      console.log(event.target.className);
-    if(event.target.className == 'change-eaten'){
-          updateBehavior(event);
-     }
- });

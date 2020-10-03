@@ -14,7 +14,7 @@
                 <input type='text' id='bu' name='name'>
             </div>
 
-            <button type="submit">Add Burger</button>
+            <button type="submit">COOK</button>
         </form>
     </div>
 </div>
@@ -30,11 +30,12 @@
 
 <figure id="rightcat"><img src="/assets/images/rightcatslong.png" alt="cats lining the right side of the screen"></figure>
 <figure id="leftcat"><img src="/assets/images/leftcatslong.png" alt="cats lining the left side of the screen"></figure>
-<figure id="burgercat"><img src="/assets/images/cateats.png" alt="cartoon cat eating a burger"></figure>
+
 
 <div class="burger-box"> 
     <div class="uneaten-column">
-        <h2>Orders Ready:</h2>
+        <h2>Feed A Cat!</h2>
+        <p class="subtitle">Or, you know, toss it out, if it is yuck.</p>
 
         <ol id="table">
             {{#each burgers}}
@@ -47,6 +48,7 @@
 
     <div class="eaten-column">
         <h2>Memories of Burgers Past:</h2>
+        <p class="subtitle">Or maybe forget it, if it was gross.</p>
 
         <ol id="stomach">
             {{#each burgers}}

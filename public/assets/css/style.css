@@ -103,6 +103,11 @@ h2 {
     background-color: rgba(86, 47, 177, 0.5);
 }
 
+.subtitle {
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
 .eaten-column, .uneaten-column {
     border-radius: 15px;
     width: 48%;

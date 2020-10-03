@@ -3,11 +3,9 @@
         <p><strong>{{name}}</strong></p>
         <p>
         <button class="change-eaten" data-name="{{name}}" data-id="{{id}}" data-neweat="{{eaten}}">
-            {{#if eaten}}FEED IT TO A CAT!{{else}}MAKE ANOTHER!{{/if}}
+            {{#if eaten}}YUM!{{else}}MORE!{{/if}}
             </button>
-        </p>
-        <p>
-        <button class="deleter" data-id="{{id}}">{{#if eaten}}Throw it in the trash.{{else}}Forget this. It was yucky.{{/if}}</button>
+        <button class="deleter" data-id="{{id}}">{{#if eaten}}Yuck.{{else}}Gross.{{/if}}</button>
         </p>
     </div>
 </li>
