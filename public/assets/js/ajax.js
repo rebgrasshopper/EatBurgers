@@ -1,30 +1,45 @@
-$("#burgercat").hide();
+function updateBehavior(event){
+     // effects();
+     const id = $(event.target).data("id");
+     const name = $(event.target).data("name");
+     const newEat = $(event.target).data("neweat");
+     let thisColumn = $(event.target).parents()[3];
+     console.log(id);
+     console.log(name);
+     console.log(newEat);
+     
+     let newEatState = {};
+     $(event.target).parents()[2].remove();
+
+     showAnImage();
+     setTimeout(showAnImage, 500);
+     //change to numbers because the MySQL was unhappy to receive True/False
+     if (newEat === true) {
+         newEatState.eaten = 1;
+     } else {
+         newEatState.eaten = 0;
+     }
+
+     //send PUT
+     $.ajax("/api/burgers/" + id, {
+         type: "PUT",
+         data: newEatState,
+     }).then(function(){
+         //locate opposite column to append li to
+         if (thisColumn.id == "table"){
+             thisColumn = $("#stomach");
+         } else {
+             thisColumn = $("#table");
+         }
+         
+         makeLi(name, id, newEat).then(function(data){
+             thisColumn.append(data);
+         });
+     });
+}
 //wait until DOM is loaded
 $(function() {
-    //eat button behavior
-    $(".change-eaten").on("click", function(event) {
-        effects();
-        const id = $(this).data("id");
-        let newEat = $(this).data("neweat");
-        if (newEat === true) {
-            newEat = 1;
-        } else {
-            newEat = 0;
-        }
-        const newEatState = {
-            eaten: newEat,
-        };
-        console.log(newEatState);
 
-        //send PUT
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: newEatState,
-        }).then(function(){
-            console.log(`Changed eaten to: ${newEat}`);
-            setTimeout(location.reload(), 200);
-        });
-    });
 
     //new burger button behavior
     $(".create-form").on("submit", function(event) {
@@ -51,13 +66,14 @@ $(function() {
     //delete burger button behavior
     $(".deleter").on("click", function(event) {
         const id = $(this).data("id");
+        $(this).parents()[2].remove();
+
 
         //Send DELETE
         $.ajax("/api/burgers/" +id, {
             type: "DELETE",
         }).then(function() {
             console.log(`Deleted burger id: ${id}`);
-            location.reload();
         });
     });
 });
@@ -81,3 +97,12 @@ function effects() {
     };
     $( "#burgercat" ).hide();
   }
+
+
+
+  document.addEventListener('click',function(event){
+      console.log(event.target.className);
+    if(event.target.className == 'change-eaten'){
+          updateBehavior(event);
+     }
+ });

@@ -27,11 +27,6 @@ router.put("/api/burgers/:id", function(req, res) {
     let eaten = req.body.eaten;
     burger.update(req.params.id, req.body.eaten).then(function(data){
         res.status(200).end();
-        // burger.findAll().then(function(data){
-        //     console.log("I found things after the PUT");
-        //     console.log(data);
-        //     res.render("partials/burger-block", {burgers:data});
-        // })
     })
 })
 module.exports = router;

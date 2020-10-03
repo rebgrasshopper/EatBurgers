@@ -28,6 +28,8 @@ button {
     margin: 20px;
     border-radius: 15px;
     height: 300px;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 /* RIGHT SIDE */
@@ -44,11 +46,14 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 h1{
     font-size: 80px;
     text-shadow:  0 0 30px #a32fe6, 0 0 5px #0000FF;
+    z-index: 1000;
+    margin-top: 130px;
 }
 
 .create-form label {
@@ -80,11 +85,14 @@ h1{
 .burger-box {
     display: flex;
     justify-content: space-around;
+    margin-right: 60px;
+    margin-left: 60px;
 }
 
 h2 {
     font-size: 40px;
     text-shadow:  0 0 3px #FF0000, 0 0 5px #0000FF;
+    z-index: 1000;
 }
 
 .uneaten-column {
@@ -106,6 +114,12 @@ h2 {
     align-items: center;
 }
 
+ol {
+    z-index: 1000;
+    font-weight: bolder;
+    text-shadow:  0 0 30px #a32fe6, 0 0 5px #ff15e0;
+}
+
 li {
     padding: 3px;
     font-size: 25px;
@@ -113,6 +127,7 @@ li {
     margin-bottom: 4px;
     width: max-content;
     z-index: 1000;
+    color: black;
 }
 
 li div {
@@ -132,6 +147,26 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
 }
 
 
+
+/* IMAGES */
+#rightcat {
+    right: -50px;
+    top: -30px;
+}
+
+#leftcat {
+    left: -50px;
+    top: -30px;
+}
+
+#rightcat, #leftcat {
+    position: fixed;
+}
+
+#rightcat img, #leftcat img {
+    width: 200px;
+}
+
 #burgercat {
     position: absolute;
     width: min-content;
@@ -139,15 +174,53 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
     top: 600px;
     left: -100px;
     z-index: 1;
+    visibility: hidden;
 }
 
 #burgercat img {
     height: 350px;
-
 }
 
-/* JQUERY EFFECTS */
+/* .speech img {
+    opacity: 0.8;
+} */
 
-@media screen and (max-width: 800px) {
+.speech {
+    display: none;
+    z-index: 10001;
+}
 
+#speechbubbleright1 {
+    position: fixed;
+    left: 10px;
+    top: 750px;
+}
+#speechbubbleright2 {
+    position: fixed;
+    left: 2px;
+    top: 350px;
+}
+#speechbubbleright3 {
+    position: fixed;
+    left: 10px;
+}
+#speechbubbleright4 {
+    position: fixed;
+    left: 10px;
+    top: 100px;
+}
+#speechbubbleleft1 {
+    position: fixed;
+    right: 10px;
+    top: 150px;
+}
+#speechbubbleleft2 {
+    position: fixed;
+    right: 10px;
+    top: 450px;
+}
+#speechbubbleleft3 {
+    position: fixed;
+    right: 10px;
+    top: 700px;
 }
