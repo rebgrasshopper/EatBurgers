@@ -189,34 +189,35 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
 #speechbubbleright1 {
     position: fixed;
     left: 10px;
-    top: 400px;
+    top: 75vh;
 }
 #speechbubbleright2 {
     position: fixed;
     left: 2px;
-    top: 200px;
+    top: 55vh;
 }
 #speechbubbleright3 {
     position: fixed;
     left: 10px;
+    top: 5vh;
 }
 #speechbubbleright4 {
     position: fixed;
     left: 10px;
-    top: 100px;
+    top: 30vh;
 }
 #speechbubbleleft1 {
     position: fixed;
     right: 10px;
-    top: 150px;
+    top: 10vh;
 }
 #speechbubbleleft2 {
     position: fixed;
     right: 10px;
-    top: 250px;
+    top: 35vh;
 }
 #speechbubbleleft3 {
     position: fixed;
     right: 10px;
-    top: 400px;
+    top: 60vh;
 }
