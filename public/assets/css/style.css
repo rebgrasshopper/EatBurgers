@@ -181,10 +181,6 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
     height: 350px;
 }
 
-/* .speech img {
-    opacity: 0.8;
-} */
-
 .speech {
     display: none;
     z-index: 10001;
@@ -193,12 +189,12 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
 #speechbubbleright1 {
     position: fixed;
     left: 10px;
-    top: 750px;
+    top: 400px;
 }
 #speechbubbleright2 {
     position: fixed;
     left: 2px;
-    top: 350px;
+    top: 200px;
 }
 #speechbubbleright3 {
     position: fixed;
@@ -217,10 +213,10 @@ li p:nth-of-type(2), li p:nth-of-type(3) {
 #speechbubbleleft2 {
     position: fixed;
     right: 10px;
-    top: 450px;
+    top: 250px;
 }
 #speechbubbleleft3 {
     position: fixed;
     right: 10px;
-    top: 700px;
+    top: 400px;
 }
